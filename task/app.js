@@ -1,6 +1,6 @@
 // Import express
 const express = require('express');
-
+const bodyParser = require('body-parser');
 // make an object express
 const app = express();
 
@@ -16,3 +16,5 @@ app.use(router);
 app.listen(3000, () => {
     console.log("Server running at http://localhost:3000");
 });
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
